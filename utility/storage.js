@@ -36,7 +36,7 @@ module.exports.getLastNRows = function(azure, tableService, columns, n, sort, ca
     .select(columns)
     .top(n);
 
-  tableService.queryEntities(process.env.TABLE_NAME, query, null, function(error, result, response) {
+  tableService.queryEntities(AzureIPAMTable, query, null, function(error, result, response) {
     if (error) return callback(error);
 
     // each prop in the results comes back with a nested prop of `_`, 
