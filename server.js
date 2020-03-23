@@ -5,7 +5,7 @@ const Hapi = require('hapi');
 const Hoek = require('hoek');
 const azure = require('azure-storage');
 const storage = require('./utility/storage');
-const tableService = azure.createTableService(process.env.AZURE_STORAGE_ACCOUNT, process.env.AZURE_STORAGE_ACCOUNT_KEY);
+const tableService = azure.createTableService('DefaultEndpointsProtocol=https;AccountName=cerrsdevtestipam;AccountKey=f9Idp9aj1iVew5XTMLavwON21acuTaDehVWAWYnIlqWHMutI0xPoHt93uqmZtEOSOuP4PLrjTArnVUNniDQOMQ==;EndpointSuffix=core.usgovcloudapi.net');
 
 const server = new Hapi.Server();
 server.connection({ port: process.env.PORT || 3000, host: 'localhost' })
