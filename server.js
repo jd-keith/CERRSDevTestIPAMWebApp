@@ -62,8 +62,8 @@ server.register(require('vision'), (err) => {
         
         const viewData = {
           rows: rows,
-          storageName: process.env.AZURE_STORAGE_ACCOUNT,
-          tableName: process.env.TABLE_NAME
+          storageName: cerrsdevtestipam,
+          tableName: AzureIPAMTable
         };
 
         reply.view('index', viewData, { layout: 'main'});
