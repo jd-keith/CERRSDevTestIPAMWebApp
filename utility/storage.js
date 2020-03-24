@@ -50,7 +50,7 @@ module.exports.getLastNRows = function(azure, tableService, columns, n, sort, ca
         }, {});
     });
     
-    const sortStrategy = (sort === 'columns') ? byTime : byField(sort);
+    const sortStrategy = (sort === 'Timestamp') ? byTime : byField(sort);
     const sorted = rows.slice().sort(sortStrategy);
 
     return callback(null, sorted);
