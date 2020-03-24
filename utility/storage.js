@@ -51,8 +51,8 @@ module.exports.getLastNRows = function(azure, tableService, columns, n, sort, ca
     });
     
     const columns = ['ResourceGroup', 'Name'];
-    const sorted = columns.sort();
+    columns.sort();
 
-    return callback(null, sorted);
+    return callback(null, columns);
   });
 };
