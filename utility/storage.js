@@ -4,23 +4,11 @@ function getTime(time) {
 }
 
 // sort by date descending
-function byTime(a, b) {
-  const later = getTime(a.Timestamp) > getTime(b.Timestamp);
-
-  switch (later) {
-    case true:
-      return -1;
-      break;
-
-    case false:
-      return 1;
-      break;
-
-    default:
-      return 0;
-  }
-}
-
+function byColumn(column) {
+const tableColumns=['ResourceGroupName'];
+  tableColumns.sort();
+};
+  
 function byField(field) {
   return function(a, b) {
     const numeric = typeof a[field] === 'number' && typeof b[field] === 'number';
@@ -50,8 +38,8 @@ module.exports.getLastNRows = function(azure, tableService, columns, n, sort, ca
         }, {});
     });
     
-    const sortStrategy = (sort === 'Timestamp') ? byTime : byField(sort);
-    const sorted = rows.slice().sort(sortStrategy);
+    //const sortStrategy = (sort === 'Timestamp') ? byTime : byColumn(sort);
+    const sorted = rows.slice().sort(tableColumns);
 
     return callback(null, sorted);
   });
