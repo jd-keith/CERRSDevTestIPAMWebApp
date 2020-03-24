@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Table Storage Viewer App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./sorttable.js" type="text/javascript"></script>
+    <script src="./sorttable.js" type="text/javascript">
+      var newTableObject = document.getElementById("myTable")
+      sorttable.makeSortable(newTableObject);
+    </script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
   </head>
