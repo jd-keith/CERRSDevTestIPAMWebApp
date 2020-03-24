@@ -50,9 +50,9 @@ module.exports.getLastNRows = function(azure, tableService, columns, n, sort, ca
         }, {});
     });
     
-    const columns = ['ResourceGroup', 'Name'];
-    columns.sort();
+    const sortStrategy = (sort === 'Timestamp') ? byTime : byField(sort);
+    const sorted = rows.slice().sort(sortStrategy);
 
-    return callback(null, columns);
+    return callback(null, sorted);
   });
 };
