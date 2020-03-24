@@ -5,7 +5,7 @@ function getTime(time) {
 
 // sort by date descending
 function byColumn(column) {
-const tableColumns=['ResourceGroupName'];
+const tableColumns = 'ResourceGroupName';
   tableColumns.sort();
 };
   
