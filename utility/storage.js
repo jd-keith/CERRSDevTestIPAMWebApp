@@ -1,6 +1,6 @@
 // convert fake dates
 function getTime(time) {
-  return (new Date(time.toString())).getTime();
+  return (new Date(time)).getTime();
 }
 
 // sort by date descending
