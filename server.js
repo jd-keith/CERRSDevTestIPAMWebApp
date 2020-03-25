@@ -62,7 +62,7 @@ server.register(require('vision'), (err) => {
            // }
 
             const viewData = {
-                rows: rows,
+                rows: numRows,
                 storageName: 'cerrsdevtestipam',
                 tableName: 'AzureIPAMTable'
             };
