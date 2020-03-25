@@ -53,9 +53,9 @@ server.register(require('vision'), (err) => {
     handler: function (request, reply) {
       const numRows = request.query.rows ? request.query.rows : 100;
       const columns = columnNames;
-      const sort = request.query.sort && columns.includes(request.query.sort) ? request.query.sort : 'Timestamp';
+      //const sort = request.query.sort && columns.includes(request.query.sort) ? request.query.sort : 'Timestamp';
 
-      storage.getLastNRows(azure, tableService, columns, numRows, sort, function(error, rows) {
+      storage.getLastNRows(azure, tableService, columns, numRows, function(error, rows) {
         if (error) {
           console.log(error);
           return reply(error);
