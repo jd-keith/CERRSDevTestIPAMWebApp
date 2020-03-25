@@ -55,11 +55,11 @@ server.register(require('vision'), (err) => {
       const columns = columnNames;
       //const sort = request.query.sort && columns.includes(request.query.sort) ? request.query.sort : 'Timestamp';
 
-      storage.getLastNRows(azure, tableService, columns, numRows, function(error, rows) {
-        if (error) {
-          console.log(error);
-          return reply(error);
-        }
+      //storage.getLastNRows(azure, tableService, columns, numRows, function(error, rows) {
+        //if (error) {
+          //console.log(error);
+          //return reply(error);
+        //}
         
         const viewData = {
           rows: rows,
