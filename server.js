@@ -4,7 +4,7 @@ const Path = require('path');
 const Hapi = require('hapi');
 const Hoek = require('hoek');
 const azure = require('azure-storage');
-var columnNames = ['ResourceGroupName', 'IP']
+//var columnNames = ['ResourceGroupName', 'IP']
 var storageConnectionString = 'DefaultEndpointsProtocol=https;AccountName=cerrsdevtestipam;AccountKey=f9Idp9aj1iVew5XTMLavwON21acuTaDehVWAWYnIlqWHMutI0xPoHt93uqmZtEOSOuP4PLrjTArnVUNniDQOMQ==;EndpointSuffix=core.usgovcloudapi.net'
 const storage = require('./utility/storage');
 const tableService = azure.createTableService(storageConnectionString);
@@ -52,7 +52,7 @@ server.register(require('vision'), (err) => {
         path: '/',
         handler: function (request, reply) {
             const numRows = request.query.rows ? request.query.rows : 100;
-            const columns = columnNames;
+            const columns = process.env.TABLE_COLUMNS.split(',').map(c => c.trim());
             const sort = request.query.sort && columns.includes(request.query.sort) ? request.query.sort : 'Timestamp';
 
             storage.getLastNRows(azure, tableService, columns, numRows, function(error, rows) {
