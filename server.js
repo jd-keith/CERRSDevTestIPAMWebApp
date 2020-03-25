@@ -6,7 +6,7 @@ const Hoek = require('hoek');
 const azure = require('azure-storage');
 var columnNames = ['ResourceGroupName', 'IP']
 var storageConnectionString = 'DefaultEndpointsProtocol=https;AccountName=cerrsdevtestipam;AccountKey=f9Idp9aj1iVew5XTMLavwON21acuTaDehVWAWYnIlqWHMutI0xPoHt93uqmZtEOSOuP4PLrjTArnVUNniDQOMQ==;EndpointSuffix=core.usgovcloudapi.net'
-const storage = require('./utility/storage');
+//const storage = require('./utility/storage');
 const tableService = azure.createTableService(storageConnectionString);
 
 const server = new Hapi.Server();
